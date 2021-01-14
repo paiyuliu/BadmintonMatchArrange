@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>羽球 PARTY NIGHT</title>
+</head>
+
+<body>
+
+    <div style="height: 12rem;">&nbsp;</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">第一場</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <div class="col col-12 d-block d-xl-none">&nbsp;</div>
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">第一場預備</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <div class="col col-12">&nbsp;</div>
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">第二場</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <div class="col col-12 d-block d-xl-none">&nbsp;</div>
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">第二場預備</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <div class="col col-12">&nbsp;</div>
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">排隊區</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <div class="col col-12 d-block d-xl-none">&nbsp;</div>
+            <div class="col col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-header">休息區</div>
+                    <div id="RestLobby" class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2020 柏余製作</p>
+    </footer>
+
+
+
+
+
+
+    <script>
+        var playerList = [];
+        $(document).ready(function () {
+            $.when(ReadPlayer(), ReadStatusJson())
+                .then(function (playerData, statusData) {
+                    console.log(playerData[0]);
+                    playerList = playerData[0];
+                    console.log(statusData[0]);
+                    /*設定休息區*/
+                    InitLobby(playerList);
+
+                    /*設定排隊區*/
+
+                    /*設定預備區*/
+
+                    /*設定上場區*/
+
+
+                }, function () {
+                    console.error(讀取資料錯誤);
+                });
+
+        });
+
+        /*
+        讀取 status 資料
+        */
+        var ReadStatusJson = function () {
+            return $.get({
+                "url": "status.json"
+            });
+        };
+
+        /*
+        讀取名單
+        */
+        var ReadPlayer = function () {
+            return $.get({
+                "url": "data.json"
+            });
+        };
+
+        /*
+        初始化休息區
+        */
+        var InitLobby = function (playerList) {
+            console.log("function InitLobby");
+            let filteredData = playerList.filter(function (player) {
+                player.RandomNumber = Math.random();
+                return player.Status == "Rest";
+            });
+            filteredData.forEach(function (item) {
+                let $tmpDiv = $("<div/>").addClass("row w-75 mb-3").appendTo($("#RestLobby"));
+                $("<div/>").addClass("col col-6").text(item.name).appendTo($tmpDiv);
+                let $assignToStandBy = $("<div/>").addClass("btn btn-info col col-2 ml-auto").text("排隊去")
+                    .appendTo($tmpDiv);
+
+                $assignToStandBy.click(function () {
+                    SetStandBy(filteredData, item);
+
+                });
+
+            });
+            console.log(playerList);
+        };
+
+        /*設定 等待區*/
+        var SetStandBy = function (playerList, specificPlayer) {
+
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+
+            if (specificPlayer) {
+                /* TODO: 有傳特定朋友進來就將特定同仁排進等待區*/
+
+
+            } else {
+                /* TODO: 沒有就通通送去排隊*/
+
+            }
+
+
+        };
+    </script>
+
+
+
+
+
+</body>
+
+</html>
