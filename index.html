@@ -21,7 +21,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="card">
                     <div class="card-header">第一場</div>
-                    <div class="card-body">Content</div>
+                    <div id="Match1Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="card">
                     <div class="card-header">第一場預備</div>
-                    <div class="card-body">Content</div>
+                    <div id="WaitMatch1Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="card">
                     <div class="card-header">第二場預備</div>
-                    <div class="card-body">Content</div>
+                    <div class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="card">
                     <div class="card-header">排隊區</div>
-                    <div id="StandByLobby" class="card-body">Content</div>
+                    <div id="StandByLobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="col col-12 col-lg-6">
                 <div class="card">
                     <div class="card-header">休息區</div>
-                    <div id="RestLobby" class="card-body">Content</div>
+                    <div id="RestLobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -128,10 +128,25 @@
             });
             filteredData.forEach(function (item) {
                 AddList($("#RestLobby"), item.name, "排隊去", function () {
-                    SetStandBy(filteredData, item)
+                    SetStandBy(filteredData, item);
                 });
             });
         };
+
+        var SetLobby=function (playerList, specificPlayer) {
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+
+            if (specificPlayer) {
+                specificPlayer.Status = "Rest";
+
+                AddList($("#RestLobby"),specificPlayer.name,"排隊去",function(){
+                    SetStandBy(playerList, specificPlayer);
+                });
+            }
+        }
 
         /*
         將資料新增到target上
@@ -146,15 +161,47 @@
                 .text(name)
                 .appendTo($tmpDiv);
 
-            let $assignToStandBy = $("<div/>")
+            let $assignToAction = $("<div/>")
                 .addClass("btn btn-info col col-2 ml-auto")
                 .text(nextActionDesc)
                 .appendTo($tmpDiv);
 
-            $assignToStandBy.click(function () {
+            $assignToAction.click(function () {
                 $tmpDiv.remove();
                 func();
             });
+        };
+
+        var AddListTwoAction = function (target, name, nextActionDesc1,func1,nextActionDesc2,func2) {
+            let $tmpDiv = $("<div/>")
+                .addClass("row w-75 mb-3")
+                .appendTo(target);
+
+            $("<div/>")
+                .addClass("col col-6")
+                .text(name)
+                .appendTo($tmpDiv);
+
+            let $assignToAction1 = $("<div/>")
+                .addClass("btn btn-info col col-2 ml-auto")
+                .text(nextActionDesc1)
+                .appendTo($tmpDiv);
+
+            $assignToAction1.click(function () {
+                $tmpDiv.remove();
+                func1();
+            });
+
+            let $assignToAction2 = $("<div/>")
+                .addClass("btn btn-info col col-2 ml-auto")
+                .text(nextActionDesc2)
+                .appendTo($tmpDiv);
+
+            $assignToAction2.click(function () {
+                $tmpDiv.remove();
+                func2();
+            });
+
         };
 
         var test = function (para) {
@@ -173,23 +220,55 @@
                 //console.log(specificPlayer);
                 specificPlayer.Status = "Standby";
 
-                //$("#StandByLobby")
-                AddList($("#StandByLobby"), specificPlayer.name, "報隊去", function () {
-                    SetStandBy(playerList, specificPlayer)
+                AddListTwoAction($("#StandByLobby"), specificPlayer.name, "第一場", function () {
+                    AddWaitMatch1(playerList, specificPlayer);
+                },"第二場",function(){
+                    AddWaitMatch2(playerList, specificPlayer);
                 });
             } else {
                 /* TODO: 沒有就通通送去排隊*/
             }
         };
 
-        /*這邊會比較複雜*/
-        var SetWaitMatch=function(){
+        
 
+        
+        var AddWaitMatch1=function(playerList, specificPlayer){
+            
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+
+            if (specificPlayer) {
+                specificPlayer.Status = "WaitMatch1";
+
+                AddList($("#WaitMatch1Lobby"),specificPlayer.name,"上第一場",function(){
+                    AddMatch1(playerList, specificPlayer);
+                });
+            }
+
+        };
+
+        var AddMatch1=function(playerList, specificPlayer){
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+
+            if (specificPlayer) {
+                specificPlayer.Status = "PlayMatch1";
+
+                AddList($("#Match1Lobby"),specificPlayer.name,"去休息",function(){
+                    SetLobby(playerList, specificPlayer);
+                });
+            }
 
         }
 
-
-
+        var AddWaitMatch2=function(){
+            alert("Hello2");
+        };
     </script>
 
 
