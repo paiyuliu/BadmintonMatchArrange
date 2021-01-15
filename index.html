@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css" integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA==" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>羽球 PARTY NIGHT</title>
+
+    <style>
+        .h220px{
+            min-height: 320px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +26,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-12 col-lg-6">
-                <div class="card">
+                <div class="card h220px">
                     <div class="card-header">第一場</div>
                     <div id="Match1Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
@@ -27,7 +34,7 @@
             </div>
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
             <div class="col col-12 col-lg-6">
-                <div class="card">
+                <div class="card h220px">
                     <div class="card-header">第一場預備</div>
                     <div id="WaitMatch1Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
@@ -35,17 +42,17 @@
             </div>
             <div class="col col-12">&nbsp;</div>
             <div class="col col-12 col-lg-6">
-                <div class="card">
+                <div class="card h220px">
                     <div class="card-header">第二場</div>
-                    <div class="card-body">Content</div>
+                    <div id="Match2Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
             <div class="col col-12 col-lg-6">
-                <div class="card">
+                <div class="card h220px">
                     <div class="card-header">第二場預備</div>
-                    <div class="card-body">&nbsp;</div>
+                    <div id="WaitMatch2Lobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -60,7 +67,7 @@
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
             <div class="col col-12 col-lg-6">
                 <div class="card">
-                    <div class="card-header">休息區</div>
+                    <div class="card-header">休息區 <button id="ShuffleButton" class="btn btn-warning">洗牌</button> </div>
                     <div id="RestLobby" class="card-body">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
@@ -125,7 +132,23 @@
             let filteredData = playerList.filter(function (player) {
                 player.RandomNumber = Math.random();
                 return player.Status == "Rest";
+            }).sort(function (a, b) {
+                if (a.RandomNumber > b.RandomNumber) {
+                    return 1;
+                }
+
+                if (a.RandomNumber < b.RandomNumber) {
+                    return -1;
+                }
+
+                return 0;
+
             });
+
+
+
+
+
             filteredData.forEach(function (item) {
                 AddList($("#RestLobby"), item.name, "排隊去", function () {
                     SetStandBy(filteredData, item);
@@ -133,7 +156,7 @@
             });
         };
 
-        var SetLobby=function (playerList, specificPlayer) {
+        var SetLobby = function (playerList, specificPlayer) {
             if (!playerList) {
                 console.error("設定等待區異常");
                 return;
@@ -142,7 +165,7 @@
             if (specificPlayer) {
                 specificPlayer.Status = "Rest";
 
-                AddList($("#RestLobby"),specificPlayer.name,"排隊去",function(){
+                AddList($("#RestLobby"), specificPlayer.name, "排隊去", function () {
                     SetStandBy(playerList, specificPlayer);
                 });
             }
@@ -172,7 +195,7 @@
             });
         };
 
-        var AddListTwoAction = function (target, name, nextActionDesc1,func1,nextActionDesc2,func2) {
+        var AddListTwoAction = function (target, name, nextActionDesc1, func1, nextActionDesc2, func2) {
             let $tmpDiv = $("<div/>")
                 .addClass("row w-75 mb-3")
                 .appendTo(target);
@@ -222,7 +245,7 @@
 
                 AddListTwoAction($("#StandByLobby"), specificPlayer.name, "第一場", function () {
                     AddWaitMatch1(playerList, specificPlayer);
-                },"第二場",function(){
+                }, "第二場", function () {
                     AddWaitMatch2(playerList, specificPlayer);
                 });
             } else {
@@ -230,11 +253,11 @@
             }
         };
 
-        
 
-        
-        var AddWaitMatch1=function(playerList, specificPlayer){
-            
+
+
+        var AddWaitMatch1 = function (playerList, specificPlayer) {
+
             if (!playerList) {
                 console.error("設定等待區異常");
                 return;
@@ -243,14 +266,14 @@
             if (specificPlayer) {
                 specificPlayer.Status = "WaitMatch1";
 
-                AddList($("#WaitMatch1Lobby"),specificPlayer.name,"上第一場",function(){
+                AddList($("#WaitMatch1Lobby"), specificPlayer.name, "上第一場", function () {
                     AddMatch1(playerList, specificPlayer);
                 });
             }
 
         };
 
-        var AddMatch1=function(playerList, specificPlayer){
+        var AddMatch1 = function (playerList, specificPlayer) {
             if (!playerList) {
                 console.error("設定等待區異常");
                 return;
@@ -259,15 +282,91 @@
             if (specificPlayer) {
                 specificPlayer.Status = "PlayMatch1";
 
-                AddList($("#Match1Lobby"),specificPlayer.name,"去休息",function(){
+                AddList($("#Match1Lobby"), specificPlayer.name, "去休息", function () {
                     SetLobby(playerList, specificPlayer);
                 });
             }
 
-        }
+        };
 
-        var AddWaitMatch2=function(){
-            alert("Hello2");
+        var AddWaitMatch2 = function (playerList, specificPlayer) {
+
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+            if (specificPlayer) {
+                specificPlayer.Status = "WaitMatch2";
+                AddList($("#WaitMatch2Lobby"), specificPlayer.name, "上第二場", function () {
+                    AddMatch2(playerList, specificPlayer);
+                });
+            }
+        };
+
+        var AddMatch2 = function (playerList, specificPlayer) {
+            if (!playerList) {
+                console.error("設定等待區異常");
+                return;
+            }
+
+            if (specificPlayer) {
+                specificPlayer.Status = "PlayMatch2";
+
+                AddList($("#Match2Lobby"), specificPlayer.name, "去休息", function () {
+                    SetLobby(playerList, specificPlayer);
+                });
+            }
+
+        };
+
+        $("#ShuffleButton").click(function () {
+
+            if (!playerList) {
+                alert("無資料,請確認!");
+                return;
+            }
+
+            if (!playerList.length > 0) {
+                alert("無資料,請確認");
+                return;
+            }
+
+            ResetRestLobby(playerList);
+
+        });
+
+        /*重設休息區*/
+        var ResetRestLobby = function (playerList) {
+            if (!playerList) {
+                return;
+            }
+
+            playerList.forEach(function (player) {
+                player.RandomNumber = Math.random();
+            });
+
+            playerList.sort(function (a, b) {
+                if (a.RandomNumber > b.RandomNumber) {
+                    return 1;
+                }
+                if (a.RandomNumber < b.RandomNumber) {
+                    return -1;
+                }
+                return 0;
+            });
+
+            let restPlayer = playerList.filter(function (player) {
+                return player.Status == "Rest";
+            });
+
+            $("#RestLobby").empty();
+
+            restPlayer.forEach(function (player) {
+                AddList($("#RestLobby"), player.name, "排隊去", function () {
+                    SetStandBy(playerList, player);
+                });
+            });
+
         };
     </script>
 
