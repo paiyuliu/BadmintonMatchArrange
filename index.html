@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css" integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css"
+        integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA=="
+        crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>羽球 PARTY NIGHT</title>
 
     <style>
-        .h220px{
+        .h220px {
             min-height: 320px;
         }
     </style>
@@ -25,7 +27,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第一場</div>
                     <div id="Match1Lobby" class="card-body">&nbsp;</div>
@@ -33,7 +35,7 @@
                 </div>
             </div>
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第一場預備</div>
                     <div id="WaitMatch1Lobby" class="card-body">&nbsp;</div>
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="col col-12">&nbsp;</div>
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第二場</div>
                     <div id="Match2Lobby" class="card-body">&nbsp;</div>
@@ -49,7 +51,7 @@
                 </div>
             </div>
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第二場預備</div>
                     <div id="WaitMatch2Lobby" class="card-body">&nbsp;</div>
@@ -57,7 +59,7 @@
                 </div>
             </div>
             <div class="col col-12">&nbsp;</div>
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">排隊區</div>
                     <div id="StandByLobby" class="card-body">&nbsp;</div>
@@ -65,7 +67,7 @@
                 </div>
             </div>
             <div class="col col-12 d-block d-xl-none">&nbsp;</div>
-            <div class="col col-12 col-lg-6">
+            <div class="col col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">休息區 <button id="ShuffleButton" class="btn btn-warning">洗牌</button> </div>
                     <div id="RestLobby" class="card-body">&nbsp;</div>
@@ -311,6 +313,7 @@
 
         };
 
+        /*重新洗牌*/
         $("#ShuffleButton").click(function () {
 
             if (!playerList) {
