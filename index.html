@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css"
         integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA=="
         crossorigin="anonymous" />
+
+    <!-- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+    crossorigin="anonymous" />
+    -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <title>羽球 PARTY NIGHT</title>
 
     <style>
@@ -30,7 +39,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第一場</div>
-                    <div id="Match1Lobby" class="card-body">&nbsp;</div>
+                    <div id="Match1Lobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -38,7 +47,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第一場預備</div>
-                    <div id="WaitMatch1Lobby" class="card-body">&nbsp;</div>
+                    <div id="WaitMatch1Lobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -46,7 +55,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第二場</div>
-                    <div id="Match2Lobby" class="card-body">&nbsp;</div>
+                    <div id="Match2Lobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -54,7 +63,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card h220px">
                     <div class="card-header">第二場預備</div>
-                    <div id="WaitMatch2Lobby" class="card-body">&nbsp;</div>
+                    <div id="WaitMatch2Lobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -62,7 +71,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">排隊區</div>
-                    <div id="StandByLobby" class="card-body">&nbsp;</div>
+                    <div id="StandByLobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -70,7 +79,7 @@
             <div class="col col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">休息區 <button id="ShuffleButton" class="btn btn-warning">洗牌</button> </div>
-                    <div id="RestLobby" class="card-body">&nbsp;</div>
+                    <div id="RestLobby" class="card-body sortable">&nbsp;</div>
                     <div class="card-footer">Footer</div>
                 </div>
             </div>
@@ -97,6 +106,14 @@
                     console.error(讀取資料錯誤);
                 });
 
+        });
+
+        $(function () {
+            $(".sortable").sortable({
+                revert: true
+            });
+
+            $("ul, li,.sortable , .ui-state-default").disableSelection();
         });
 
         /*
@@ -168,7 +185,7 @@
         */
         var AddList = function (target, name, nextActionDesc, func) {
             let $tmpDiv = $("<div/>")
-                .addClass("row w-75 mb-3")
+                .addClass("row w-75 mb-3 ui-state-default")
                 .appendTo(target);
 
             $("<div/>")
@@ -189,7 +206,7 @@
 
         var AddListTwoAction = function (target, name, nextActionDesc1, func1, nextActionDesc2, func2) {
             let $tmpDiv = $("<div/>")
-                .addClass("row w-75 mb-3")
+                .addClass("row w-75 mb-3 ui-state-default")
                 .appendTo(target);
 
             $("<div/>")
