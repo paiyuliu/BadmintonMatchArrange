@@ -1,60 +1,66 @@
 [{
-    "num":0,
+    "num":1,
     "name": "柔",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":1,
+    "num":2,
     "name": "俊逸",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":2,
+    "num":3,
     "name": "襦",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":3,
+    "num":4,
     "name": "Camilla",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":4,
+    "num":5,
     "name": "柏余",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":5,
+    "num":6,
     "name": "DAVID",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":6,
+    "num":7,
     "name": "宗澤",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":7,
+    "num":8,
     "name": "嚴宇",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":8,
+    "num":9,
     "name": "阿祥",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":9,
+    "num":10,
     "name": "JL",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":16,
+    "name": "Still",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"

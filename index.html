@@ -88,19 +88,9 @@
         $(document).ready(function () {
             $.when(ReadPlayer(), ReadStatusJson())
                 .then(function (playerData, statusData) {
-
                     playerList = playerData[0];
-
                     /*設定休息區*/
                     InitLobby(playerList);
-
-                    /*設定排隊區*/
-
-                    /*設定預備區*/
-
-                    /*設定上場區*/
-
-
                 }, function () {
                     console.error(讀取資料錯誤);
                 });
@@ -266,7 +256,7 @@
             if (specificPlayer) {
                 specificPlayer.Status = "WaitMatch1";
 
-                AddList($("#WaitMatch1Lobby"), specificPlayer.name, "上第一場", function () {
+                AddList($("#WaitMatch1Lobby"), specificPlayer.name, "上一場", function () {
                     AddMatch1(playerList, specificPlayer);
                 });
             }
@@ -281,6 +271,7 @@
 
             if (specificPlayer) {
                 specificPlayer.Status = "PlayMatch1";
+                specificPlayer.PlayCount += 1;
 
                 AddList($("#Match1Lobby"), specificPlayer.name, "去休息", function () {
                     SetLobby(playerList, specificPlayer);
@@ -297,7 +288,7 @@
             }
             if (specificPlayer) {
                 specificPlayer.Status = "WaitMatch2";
-                AddList($("#WaitMatch2Lobby"), specificPlayer.name, "上第二場", function () {
+                AddList($("#WaitMatch2Lobby"), specificPlayer.name, "上二場", function () {
                     AddMatch2(playerList, specificPlayer);
                 });
             }
@@ -311,6 +302,7 @@
 
             if (specificPlayer) {
                 specificPlayer.Status = "PlayMatch2";
+                specificPlayer.PlayCount += 1;
 
                 AddList($("#Match2Lobby"), specificPlayer.name, "去休息", function () {
                     SetLobby(playerList, specificPlayer);
