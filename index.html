@@ -20,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
 
     <title>羽球 PARTY NIGHT</title>
 
@@ -111,9 +112,9 @@
         $(function () {
             $(".sortable").sortable({
                 revert: true
-            });
+            }).disableSelection();
 
-            $("ul, li,.sortable , .ui-state-default").disableSelection();
+            //$("ul, li,.sortable , .ui-state-default").disableSelection();
         });
 
         /*
