@@ -48,7 +48,7 @@
     "Status":"Rest"
 }, {
     "num":9,
-    "name": "阿祥",
+    "name": "特洛伊",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
@@ -59,8 +59,44 @@
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
+    "num":11,
+    "name": "kenny",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":12,
+    "name": "凱",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":13,
+    "name": "阿賢",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":14,
+    "name": "阿賢朋友(阿宣)",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":15,
+    "name": "阿勛",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
     "num":16,
     "name": "Still",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status":"Rest"
+}, {
+    "num":17,
+    "name": "特落伊友",
     "PlayCount": 0,
     "RandomNumber": 0,
     "Status":"Rest"
