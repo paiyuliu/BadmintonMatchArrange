@@ -5,99 +5,93 @@
     "RandomNumber": 0,
     "Status":"Rest"
 }, {
-    "num":2,
-    "name": "劉翰龍",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 2,
+	"name": "JL",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":3,
-    "name": "阿祥",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 3,
+	"name": "安德",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":4,
-    "name": "安德",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 4,
+	"name": "阿元",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":5,
-    "name": "柏余",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 5,
+	"name": "Clark",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":6,
-    "name": "孟庭",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 6,
+	"name": "Clark(友)",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":7,
-    "name": "孟庭友人",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 7,
+	"name": "宗澤",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":8,
-    "name": "宗澤",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 8,
+	"name": "Kiss",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":9,
-    "name": "Clark",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 9,
+	"name": "柏余",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":10,
-    "name": "嚴宇（友）",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 10,
+	"name": "俊逸",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":11,
-    "name": "嚴宇",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 11,
+	"name": "jay",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":12,
-    "name": "凱",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 12,
+	"name": "老胖 e1",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":13,
-    "name": "襦",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 13,
+	"name": "James e1",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":14,
-    "name": "阿俊",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 14,
+	"name": "阿俊 e2",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":15,
-    "name": "小朱",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 15,
+	"name": "Ch e1",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }, {
-    "num":16,
-    "name": "阿鴻",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
-}, {
-    "num":17,
-    "name": "Morris L",
-    "PlayCount": 0,
-    "RandomNumber": 0,
-    "Status":"Rest"
+	"num": 16,
+	"name": "Ch朋友+1 e1",
+	"PlayCount": 0,
+	"RandomNumber": 0,
+	"Status": "Rest"
 }]
