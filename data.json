@@ -1,104 +1,121 @@
-[{
-        "num": 1,
-        "name": "柔",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 2,
-        "name": "Clark",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 3,
-        "name": "蓉",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 4,
-        "name": "阿元",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 5,
-        "name": "Kenny",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 6,
-        "name": "俊逸",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 7,
-        "name": "JL",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 8,
-        "name": "宗澤",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 9,
-        "name": "哲勇",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 10,
-        "name": "凱",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 11,
-        "name": "嚴宇",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 12,
-        "name": "阿賢",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 13,
-        "name": "林書帆 f1",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 14,
-        "name": "Sha Dow朋友 f1",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 15,
-        "name": "Sha Dow f1",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 16,
-        "name": "魏均霖 f2",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-}, {
-        "num": 17,
-        "name": "曾浩瑋 f1",
-        "PlayCount": 0,
-        "RandomNumber": 0,
-        "Status": "Rest"
-    }
+[
+  {
+    "num": 1,
+    "name": "柔",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 2,
+    "name": "柏余",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 3,
+    "name": "阿元",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 4,
+    "name": "Kenny",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 5,
+    "name": "凱",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 6,
+    "name": "阿賢",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 7,
+    "name": "俊逸",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 8,
+    "name": "洪詩傅 f1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 9,
+    "name": "阿鴻 e2",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 10,
+    "name": "不算賣嚕 e1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 11,
+    "name": "夏先生 f2",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 12,
+    "name": "王琦泓 e1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 13,
+    "name": "鎮宇 e1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 14,
+    "name": "范范 e2",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 15,
+    "name": "林書帆 f2",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 16,
+    "name": "林書帆友+1 f1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  },
+  {
+    "num": 17,
+    "name": "Kai Ti e1",
+    "PlayCount": 0,
+    "RandomNumber": 0,
+    "Status": "Rest"
+  }
 ]
